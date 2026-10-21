@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Liceo La Guácima | Proyección de notas - Pruebas Nacionales 2026</title>
+  <title>Liceo La Guácima - Proyección de notas - Pruebas Nacionales 2026</title>
   <style>
     :root {
       --azul: #1f4e79;
@@ -154,7 +154,7 @@
 <body>
   <header>
     <h1>Liceo La Guácima</h1>
-    <p style="font-size:1.15rem;font-weight:bold;margin:0 0 8px">Proyección de notas - Pruebas Nacionales Estandarizadas 2026</p>
+    <p style="font-size:1.15rem;font-weight:bold;margin:0 0 8px;">Proyección de notas - Pruebas Nacionales Estandarizadas 2026</p>
     <p>Herramienta para estimar la nota mínima requerida y la cantidad aproximada de aciertos necesarios.</p>
   </header>
 
@@ -216,7 +216,7 @@
       <div class="grid" style="margin-top:16px;">
         <div>
           <label for="preguntasEspanol">Preguntas de comprensión lectora</label>
-          <input type="number" id="preguntasEspanol" min="1" step="1" value="40" />
+          <input type="number" id="preguntasEspanol" min="1" step="1" value="60" onfocus="this.select()" onchange="calcularTodo()" />
         </div>
         <div>
           <label for="redaccionEstimada">Nota estimada en redacción</label>
@@ -254,7 +254,7 @@
       </div>
     </section>
 
-    <p class="footer">Liceo La Guácima. Archivo editable para uso educativo. Revise y actualice los valores oficiales cuando el MEP publique la cantidad definitiva de ítems por prueba.</p>
+    <p class="footer">Liceo La Guácima. Revise y actualice los valores oficiales cuando el MEP publique la cantidad definitiva de ítems por prueba.</p>
   </main>
 
   <script>
@@ -379,7 +379,7 @@
         const tr = document.createElement("tr");
         tr.innerHTML = `
           <td><strong>${materia.nombre}</strong></td>
-          <td><input class="materia-input" type="number" min="1" step="1" id="${inputId}" value="${preguntas}" oninput="calcularTodo()"></td>
+          <td><input class="materia-input" type="number" min="1" step="1" id="${inputId}" value="${preguntas}" onfocus="this.select()" onchange="calcularTodo()"></td>
           <td>${notaRequerida <= 0 ? "0.00" : notaRequerida.toFixed(2)}</td>
           <td>${aciertosTexto}</td>
           <td>${porcentaje}</td>
